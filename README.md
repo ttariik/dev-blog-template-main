@@ -1,105 +1,196 @@
-# My Developer Blog
+# Developer Blog - Tarik Sabanovic
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+A modern, feature-rich developer blog built with [Docusaurus](https://docusaurus.io/), showcasing projects, technical documentation, and a comprehensive knowledge base.
 
-## Repository Description
+![Docusaurus](https://img.shields.io/badge/Docusaurus-3.5.2-blue)
+![Node.js](https://img.shields.io/badge/Node.js-≥18.0-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5.2-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-This repository hosts a developer blog built with Docusaurus. It includes tools and scripts for creating, managing, and deploying static web content. The software supports rapid local development, customizable theming, and seamless deployment to platforms like GitHub Pages or NGINX.
+## ✨ Features
 
-## Table of Contents
+- **🎨 Modern UI Design**: Beautiful, responsive interface with smooth animations and transitions
+- **📚 Comprehensive Documentation**: Knowledge base covering DevOps, Containerization, Git, and Linux
+- **🚀 Project Showcases**: Detailed documentation for all development projects
+- **🌙 Dark Mode Support**: Seamless dark/light theme switching
+- **⚡ Performance Optimized**: Fast loading times with optimized assets
+- **📱 Fully Responsive**: Perfect experience on all devices
+- **🔍 Search Functionality**: Built-in search for easy content discovery
+- **🎯 SEO Optimized**: Meta tags and structured data for better search engine visibility
 
-- [My Developer Blog](#my-developer-blog)
-  - [Repository Description](#repository-description)
-  - [Table of Contents](#table-of-contents)
-  - [Quickstart](#quickstart)
-    - [Prerequisites](#prerequisites)
-  - [Repository Structure](#repository-structure)
-  - [Deployment](#deployment)
-    - [Deploy to Github Pages](#deploy-to-github-pages)
-    - [Deploying using NGINX](#deploying-using-nginx)
-    - [Contributing](#contributing)
-
-## Quickstart
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v16 or later recommended)
-- [pnpm](https://pnpm.io/) (package manager for faster and more efficient dependency handling)
-- [Docker](https://www.docker.com/products/docker-desktop) (only required if [deploying using NGINX](#deploying-using-nginx))
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [pnpm](https://pnpm.io/) (recommended) or npm/yarn
+- Git
 
-1. Installation
+### Installation
 
-   ```
-   $ pnpm install
-   ```
-
-2. Local Development
-
-   ```
-   $ pnpm start
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ttariik/dev-blog-template-main.git
+   cd dev-blog-template-main
    ```
 
-   This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-3. Build
-
-   ```
-   $ pnpm build
+2. Install dependencies:
+   ```bash
+   pnpm install
    ```
 
-   This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-4. Deployment
-
-   In order to deploy onto Github Pages, ensure that your `docusaurus.config.ts` conforms with the [documentation guidelines](https://docusaurus.io/docs/deployment#deploying-to-github-pages). After that is ensured run the following command to deploy:
-
-   ```
-   $ USE_SSH=true pnpm deploy
+3. Start the development server:
+   ```bash
+   pnpm start
    ```
 
-For detailed information about deploying this Docusaurus project, refer to the [Deployment](#deployment) section below.
+   The site will be available at `http://localhost:3000` with hot-reload enabled.
 
-## Repository Structure
+### Build for Production
 
-The repository is organized as follows:
-
-- `blog/`: Contains markdown files for blog posts. Blog-related metadata is automatically picked up by the Docusaurus configuration.
-- `docs/`: Contains markdown files for documentation. These files are referenced in `sidebars.ts` to define the sidebar structure.
-- `src/`: Contains custom React components, CSS, and JavaScript for additional functionality or theming.
-- `static/`: Stores static assets (e.g., images, icons) served directly without processing.
-- `sidebars.ts`: Configures the structure of sidebars in the documentation section.
-- `docusaurus.config.ts`: Main configuration file for customizing and managing Docusaurus behavior.
-- `build/`: Generated after running the `pnpm build` command. Contains the static website files ready for deployment.
-
-New content can be added as follows:
-
-- Add new documentation files to the `docs/` folder.
-- Add new blog posts to the `blog/` folder. No additional configuration is required.
-
-## Deployment
-
-### Deploy to Github Pages
-
-To deploy using SSH:
-
-```
-$ USE_SSH=true pnpm deploy
+```bash
+pnpm build
 ```
 
-To deploy without using SSH, run:
+This generates optimized static files in the `build/` directory.
+
+### Preview Production Build
+
+```bash
+pnpm serve
+```
+
+## 📁 Project Structure
 
 ```
-$ GIT_USER=<Your GitHub username> pnpm deploy
+dev-blog-template-main/
+├── blog/                 # Blog posts (Markdown/MDX)
+├── docs/                 # Documentation files
+│   ├── knowledge-base/   # Knowledge base articles
+│   └── projects/         # Project documentation
+├── src/
+│   ├── components/       # React components
+│   ├── css/             # Custom styles and animations
+│   └── pages/           # Custom pages
+├── static/              # Static assets (images, icons)
+├── docusaurus.config.ts # Main configuration
+└── sidebars.ts          # Sidebar structure
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## 🎨 Customization
 
-### Deploying using NGINX
+### Theme Colors
 
-To deploy the site using NGINX and Docker, refer to the Docker documentation in the knowledge base.
+Edit `src/css/custom.css` to customize the color scheme:
 
-### Contributing
+```css
+:root {
+  --ifm-color-primary: #6366f1; /* Indigo */
+  /* ... */
+}
+```
 
-Currently, this project does not seek collaborators, but we're open to suggestions regarding enhancements.
-Open an issue with a detailed description on the change you suggest and elaborate why it's benefitial for the project and vast majority.
-If accepted in the discussion, open a pull request from your fork of this repository to contribute your changes.
+### Content
+
+- **Documentation**: Add files to `docs/` and update `sidebars.ts`
+- **Projects**: Add project documentation to `docs/projects/`
+- **Blog Posts**: Create new posts in `blog/` directory
+- **Components**: Custom React components in `src/components/`
+
+## 🚢 Deployment
+
+### GitHub Pages
+
+```bash
+USE_SSH=true pnpm deploy
+```
+
+Or without SSH:
+
+```bash
+GIT_USER=ttariik pnpm deploy
+```
+
+### Cloud VM / NGINX
+
+1. Build the project:
+   ```bash
+   pnpm build
+   ```
+
+2. Copy files to server:
+   ```bash
+   tar -czf blog-build.tar.gz -C build .
+   scp blog-build.tar.gz user@your-server:/tmp/
+   ```
+
+3. On the server:
+   ```bash
+   sudo mkdir -p /var/www/html
+   sudo tar -xzf /tmp/blog-build.tar.gz -C /var/www/html
+   sudo chown -R www-data:www-data /var/www/html
+   ```
+
+4. Configure NGINX (see `nginx.conf` example in repository)
+
+### Docker
+
+```bash
+docker build -t dev-blog .
+docker run -d -p 80:80 --name dev-blog dev-blog
+```
+
+## 🛠️ Technologies
+
+- **Framework**: [Docusaurus 3.5.2](https://docusaurus.io/)
+- **Language**: TypeScript
+- **Styling**: CSS3 with Custom Properties
+- **Package Manager**: pnpm
+- **Build Tool**: Docusaurus CLI
+
+## 📚 Documentation Sections
+
+### Knowledge Base
+- **Container**: Docker fundamentals and containerization
+- **DevOps**: CI/CD, Infrastructure as Code, automation
+- **Git**: Version control workflows and best practices
+- **Linux**: Server administration and command line
+
+### Projects
+- Minecraft Server
+- Baby Tools Shop
+- WordPress Setup
+- Juice Shop Master
+- V-Server
+- Truck Signs API
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Tarik Sabanovic**
+
+- GitHub: [@ttariik](https://github.com/ttariik)
+- LinkedIn: [Tarik Sabanovic](https://www.linkedin.com/in/tarik-sabanovic-70410134b/)
+
+## 🙏 Acknowledgments
+
+- [Docusaurus](https://docusaurus.io/) for the amazing static site generator
+- [Infima](https://infima.dev/) for the CSS framework
+- All contributors and the open-source community
+
+---
+
+⭐ If you find this project helpful, please consider giving it a star!
