@@ -65,7 +65,7 @@ const sidebars: SidebarsConfig = {
         'projects/juice-shop-master',
         'projects/v-server',
         'projects/truck-signs-api',
-        'projects/vserver-setup',
+        'projects/conduit-container',
       ],
     },
   ],
